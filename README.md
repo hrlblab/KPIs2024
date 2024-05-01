@@ -32,7 +32,7 @@ KPIs challenge 2024
         docker run --rm -v $input_dir:/input/:ro -v $model:/model/:ro -v $output_dir:/output --gpus all -it hrlblab333/kpis:validation_patch
 
 ## file structure (task1)
-        The directory for both training validation need to have the following structure:
+        The directory for both training and validation needs to have the following structure:
         
         ```bash
         input_dir
