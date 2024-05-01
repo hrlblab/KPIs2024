@@ -1,6 +1,7 @@
-# KPIs2024 example docker
+# KPIs2024
 KPIs challenge 2024
 
+## Training example docker
 #Get our docker image for Training (Task 1)
 
 
@@ -19,6 +20,7 @@ Run the docker
         #run the docker
         docker run --rm -v $input_dir:/input/:ro -v $output_dir:/output --gpus all -it hrlblab333/kpis:1.0
 
+## Validation example docker
 #Get our docker image for Validation (Task 1)
 
         docker pull hrlblab333/kpis:validation_patch   
