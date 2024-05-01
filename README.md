@@ -1,13 +1,13 @@
 # KPIs2024
 KPIs challenge 2024
 
-## Training example docker
-#Get our docker image for Training (Task 1)
+# Training example docker
+## Get our docker image for Training (Task 1)
 
 
         docker pull hrlblab333/kpis:1.0
     
-Run the docker
+## Run the docker
 
 
         # you need to specify the input directory
@@ -20,18 +20,61 @@ Run the docker
         #run the docker
         docker run --rm -v $input_dir:/input/:ro -v $output_dir:/output --gpus all -it hrlblab333/kpis:1.0
 
-## Validation example docker
-#Get our docker image for Validation (Task 1)
+
+
+
+# Validation example docker
+## Get our docker image for Validation (Task 1)
 
         docker pull hrlblab333/kpis:validation_patch   
 
-        docker run --rm -v /Data/KPIs/data_train:/input/:ro -v /Data/KPIs/checkpoint:/model/:ro -v /Data/KPIs/validation_patch:/output --gpus all -it hrlblab333/kpis:validation_patch
-        
+        # you need to specify the input, output directory, and the model path
+        docker run --rm -v $input_dir:/input/:ro -v $model:/model/:ro -v $output_dir:/output --gpus all -it hrlblab333/kpis:validation_patch
 
-#Get our docker image for Validation (Task 2)
+## file structure (task1)
+        The directory for both training validation need to have the following structure:
+        
+        ```bash
+        input_dir
+            └── 56NX
+                └── case1
+                    └── img
+                        └── patch1.tiff
+                    └── mask
+                        └── patch1_mask.tiff
+                └── case2
+                └── case3
+                ...
+            └── DN
+            └── NEP25
+            └── normal
+
+        ```
+
+## Get our docker image for Validation (Task 2)
 
         docker pull hrlblab333/kpis:validation_slide
 
-        docker run --rm -v /Data/KPIs/data_val_slide:/input_slide/:ro -v /Data/KPIs/checkpoint:/model/:ro -v /Data/KPIs/validation_slide_20X:/output_slide -v /Data/KPIs/data_val_patch_20X:/input_patch -v /Data/KPIs/validation_slide_20X_patchoutput:/output_patch --gpus all -it hrlblab333/kpis:validation_slide
+        # you need to specify the input, output directory, and the model path
+        # you can specify the patch_save, and patch_mask_save directories to save the middle product for further assessment.
+        docker run --rm -v $input_dir:/input_slide/:ro -v $model:/model/:ro -v $input_dir:/output_slide -v $patch_save:/input_patch -v $patch_mask_save:/output_patch --gpus all -it hrlblab333/kpis:validation_slide
+        
+## file structure (task2)
+        The directory for validation, task2 need to have the following structure:
+        
+        ```bash
+        input_dir
+            └── 56NX
+                └── case1
+                    └── case1.tiff
+                    └── case1_mask.tiff
+                └── case2
+                └── case3
+                ...
+            └── DN
+            └── NEP25
+            └── normal
+
+        ```
 
         
