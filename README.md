@@ -34,22 +34,22 @@ KPIs challenge 2024
 ## file structure (task1)
         The directory for both training and validation needs to have the following structure:
         
-        ```bash
-        input_dir
-            └── 56NX
-                └── case1
-                    └── img
-                        └── patch1.tiff
-                    └── mask
-                        └── patch1_mask.tiff
-                └── case2
-                └── case3
-                ...
-            └── DN
-            └── NEP25
-            └── normal
+```bash
+input_dir
+    └── 56NX
+        └── case1
+            └── img
+                └── patch1.tiff
+            └── mask
+                └── patch1_mask.tiff
+        └── case2
+        └── case3
+        ...
+    └── DN
+    └── NEP25
+    └── normal
 
-        ```
+```
 
 ## Get our docker image for Validation (Task 2)
 
@@ -61,20 +61,20 @@ KPIs challenge 2024
         
 ## file structure (task2)
         The directory for validation, task2 need to have the following structure:
-        
-        ```bash
-        input_dir
-            └── 56NX
-                └── case1
-                    └── case1.tiff
-                    └── case1_mask.tiff
-                └── case2
-                └── case3
-                ...
-            └── DN
-            └── NEP25
-            └── normal
 
-        ```
+```bash
+input_dir
+    └── 56NX
+        └── case1
+            └── case1.tiff
+            └── case1_mask.tiff
+        └── case2
+        └── case3
+        ...
+    └── DN
+    └── NEP25
+    └── normal
+
+```
 
         
