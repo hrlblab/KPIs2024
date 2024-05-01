@@ -31,7 +31,7 @@ KPIs challenge 2024
         # you need to specify the input, output directory, and the model path
         docker run --rm -v $input_dir:/input/:ro -v $model:/model/:ro -v $output_dir:/output --gpus all -it hrlblab333/kpis:validation_patch
 
-## file structure (task1)
+## File structure (task1)
 The directory for both training and validation needs to have the following structure:
         
 ```bash
@@ -59,7 +59,7 @@ input_dir
         # you can specify the patch_save, and patch_mask_save directories to save the middle product for further assessment.
         docker run --rm -v $input_dir:/input_slide/:ro -v $model:/model/:ro -v $input_dir:/output_slide -v $patch_save:/input_patch -v $patch_mask_save:/output_patch --gpus all -it hrlblab333/kpis:validation_slide
         
-## file structure (task2)
+## File structure (task2)
 The directory for validation, task2 need to have the following structure:
 
 ```bash
