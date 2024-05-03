@@ -61,7 +61,7 @@ input_dir
 
         # you need to specify the input, output directory, and the model path
         # you can specify the patch_save, and patch_mask_save directories to save the middle product for further assessment.
-        docker run --rm -v $input_dir:/input_slide/:ro -v $model:/model/:ro -v $input_dir:/output_slide -v $patch_save:/input_patch -v $patch_mask_save:/output_patch --gpus all -it hrlblab333/kpis:validation_slide
+        docker run --rm -v $input_dir:/input_slide/:ro -v $model:/model/:ro -v $output_dir:/output_slide -v $patch_save:/input_patch -v $patch_mask_save:/output_patch --gpus all -it hrlblab333/kpis:validation_slide
         
 ## File structure (task2)
 The directory for validation, task2 need to have the following structure:
