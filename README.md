@@ -39,9 +39,13 @@ input_dir
     └── 56NX
         └── case1
             └── img
-                └── patch1.tiff
+                └── patch1.jpg
+                └── patch2.jpg
+                ...
             └── mask
-                └── patch1_mask.tiff
+                └── patch1_mask.jpg
+                └── patch2_mask.jpg
+                ...
         └── case2
         └── case3
         ...
@@ -65,12 +69,14 @@ The directory for validation, task2 need to have the following structure:
 ```bash
 input_dir
     └── 56NX
-        └── case1
+        └── img
             └── case1.tiff
+            └── case2.tiff
+            ...
+        └── mask
             └── case1_mask.tiff
-        └── case2
-        └── case3
-        ...
+            └── case2_mask.tiff
+            ...
     └── DN
     └── NEP25
     └── normal
