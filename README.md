@@ -82,5 +82,5 @@ input_dir
     └── normal
 
 ```
-
+## The segmentation output should be at 20x magnification.
         
