@@ -1,0 +1,13 @@
+# create the docker
+docker build -f Dockerfile -t kpis .
+docker login
+docker tag kpis hrlblab333/kpis:validation_slide
+docker push hrlblab333/kpis:validation_slide
+
+# run the code online with gpu
+docker pull hrlblab333/kpis:validation_slide
+docker run --rm -v /Data/KPIs/data_val_slide:/input_slide/:ro -v /Data/KPIs/checkpoint:/model/:ro -v /Data/KPIs/validation_slide_20X:/output_slide -v /Data/KPIs/data_val_patch_20X:/input_patch -v /Data/KPIs/validation_slide_20X_patchoutput:/output_patch --gpus all -it hrlblab333/kpis:validation_slide
+
+# run the docker locally with gpu
+docker run --rm -v /Data/KPIs/data_val_slide:/input_slide/:ro -v /Data/KPIs/checkpoint:/model/:ro -v /Data/KPIs/validation_slide_20X:/output_slide -v /Data/KPIs/data_val_patch_20X:/input_patch -v /Data/KPIs/validation_slide_20X_patchoutput:/output_patch --gpus all -it kpis
+
